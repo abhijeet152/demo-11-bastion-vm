@@ -42,7 +42,7 @@ jobs:
       uses: Azure/login@v2.3.0
       with:
         # ClientId of the Azure Service principal created.
-        client-id: ${{ secrets.MYAPPREGISTRATION1 }}
+        client-id: ${{ secrets.APP_ID }}
         # TenantId of the Azure Service principal created.
         tenant-id: ${{ secrets.TENNANT_ID }}
         # Azure subscriptionId
@@ -55,7 +55,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      working-directory: environments/${{ github.event.inputs.environment }}
+      working-directory: envs/${{ github.event.inputs.environment }}
       run: terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format

@@ -21,7 +21,7 @@
 
 - On Github portal : 
 
-    - Create the secrets in github actions, for azure client_id(app_id), tennant_id, subscription id, and then for private key, public key used for vm.
+    - Create the secrets in github actions, for azure client_id(app_id), tennant_id, subscription id, and then for private_key, public_key used for vm.
 
     - Create new workflow at "."github/workflow/tf.yml" 
 
@@ -33,6 +33,8 @@
     - Pull the updated code. 
     
     - In Terraform code, update the backend config
+
+    - update workflow with environment "working-directory: envs/${{xyz}}" as required.
     
     - update workflow with oidc permissions(read,write), azure credentials, etc.
 
