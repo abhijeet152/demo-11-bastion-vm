@@ -30,7 +30,7 @@ resource "azurerm_linux_virtual_machine" "web_linuxvm" {
   network_interface_ids = [azurerm_network_interface.web_linuxvm_nic.id]
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("/tmp/terraform-azure.pub") # file will be created by agent/runner using github actions workflow using secrets
+    public_key = file("/tmp/public.pub") # file will be created by agent/runner using github actions workflow using secrets
   }
   os_disk {
     caching              = "ReadWrite"
