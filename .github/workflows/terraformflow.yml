@@ -8,7 +8,7 @@ on:
       environment:
         description: 'Select environment to deploy'
         required: true
-        default: 'dev'
+        default: '01-dev'
         type: choice
         options:
           - 01-dev
