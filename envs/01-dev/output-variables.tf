@@ -62,10 +62,10 @@ output "bastionsubnet_name" {
 
 
 # linux vm output
-output "linuxvm_public_ip" {
-  description = "vm name"
-  value = module.vm_linux.web_linuxvm_public_ip_out
-}
+# output "linuxvm_public_ip" {
+#   description = "vm name"
+#   value = module.vm_linux.web_linuxvm_public_ip_out
+# }
 
 output "linuxvm_private_ip" {
   description = "private ip"
