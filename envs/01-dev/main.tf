@@ -30,7 +30,7 @@ module "virtualnetwork" {
 # linux vm module
 module "vm_linux" {
   source                    = "../../modules/vm-linux"
-  web_linuxvm_publicip_name = "dev-linuxpublic-ip-01"
+  #web_linuxvm_publicip_name = "dev-linuxpublic-ip-01"
   location                  = module.resource_group.location_out
   resource_group_name       = module.resource_group.rg_name_out
   web_linuxvm_nic_name      = "dev-web-linuxvm-nic-01"
