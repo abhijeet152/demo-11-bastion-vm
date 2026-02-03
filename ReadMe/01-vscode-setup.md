@@ -24,7 +24,7 @@
     
 
 - Setup main branch to push code.
-  - Run below command in git bash vs code
+  - Run below command in git bash vs code (repo name and demo name conflict)
 
         git init
         git branch -M main

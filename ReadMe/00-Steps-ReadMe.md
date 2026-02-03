@@ -7,7 +7,7 @@
 
     - Create github repo, 
 
-       - copy public key to github repo settings for ssh access(vscode - github setup).
+       - copy public key to github repo settings for ssh access (vscode - github setup).
         
         - From vs code, setup a branch "main" and then check in the code from local system to main branch of remote repo.
 
