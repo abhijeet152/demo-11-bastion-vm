@@ -40,7 +40,7 @@ resource "azurerm_linux_virtual_machine" "bastion_host_linuxvm" {
   }
   os_disk {
     caching = "ReadWrite"
-    storage_account_type = "Standard"
+    storage_account_type = "Standard_LRS"
   }
   source_image_reference {
     publisher = "RedHat"
