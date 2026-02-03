@@ -11,8 +11,8 @@ on:
         default: 'dev'
         type: choice
         options:
-          - dev
-          - qa
+          - 01-dev
+          - 02-qa
   # push:
   #   branches: [ "main" ]
 
