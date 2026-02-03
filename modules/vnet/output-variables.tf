@@ -52,6 +52,12 @@ output "bastionsubnet_name_out" {
   value       = azurerm_subnet.bastionsubnet.name
 }
 
+# bastion subnet id
+output "bastionsubnet_id_out" {
+  description = "bastion subnet id out"
+  value = azurerm_subnet.bastionsubnet.id
+}
+
 # bastion subnet nsg name
 output "bastionsubnet_nsg_name_out" {
   description = "bastion subnet name"

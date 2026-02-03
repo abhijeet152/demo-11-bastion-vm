@@ -37,3 +37,15 @@ module "vm_linux" {
   subnet_id                 = module.virtualnetwork.websubnet_id_out
   vmlinux_name              = "dev-vmlinux-01"
 }
+
+# bastion linux vm
+module "bastion_linux_vm" {
+  source = "../../modules/bastion-vm-linux"
+  location = module.resource_group.location_out
+  resource_group_name = module.resource_group.rg_name_out
+  bastion_host_linuxvm_name = "dev-bastion-linuxvm-01"
+  bastion_host_linuxvm_nic_name = "dev-bastion-linuxvm-nic-01"
+  bastion_host_publicip_name = "dev-bastion-linuxvm-publicip-01"
+  bastionsubnet_id = module.virtualnetwork.bastionsubnet_id_out
+  
+}
