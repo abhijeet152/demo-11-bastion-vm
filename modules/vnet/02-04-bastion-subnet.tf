@@ -44,3 +44,11 @@ resource "azurerm_network_security_rule" "bastion_nsg_rule_inbound" {
   resource_group_name         = var.resourcegroup_name
   network_security_group_name = azurerm_network_security_group.bastionsubnet_nsg.name
 }
+
+
+# 4. associate subnet nsg
+resource "azurerm_subnet_network_security_group_association" "bastionsubnet_nsg_associate" {
+  depends_on = [ azurerm_network_security_rule.bastion_nsg_rule_inbound ]
+  network_security_group_id = azurerm_network_security_group.bastionsubnet_nsg.id
+  subnet_id = azurerm_subnet.bastionsubnet.id
+}
