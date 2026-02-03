@@ -59,6 +59,10 @@ jobs:
     # will move private key to bastion host to access vm using terraform config.
     - name: Write SSH Private Key
       run: echo "${{ secrets.PRIVATE_KEY }}" > /tmp/private.pem
+
+    # check files exist
+    - name: list files
+      run: ls /tmp
       
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.

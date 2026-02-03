@@ -17,12 +17,12 @@ resource "null_resource" "null_copy_ssh_key_to_bastion" {
   # 1.3 File Provisioner: Copies the terraform-key.pem file from source agent/runner to destination vm/bastion at /tmp/terraform-key.pem
   provisioner "file" {
     source = "/tmp/private.pem"
-    destination = "/tmp/private.pem"
+    destination = "/tmp/private1.pem"
   }
   # 1.4 Remote Exec Provisioner: Using remote-exec provisioner fix the private key permissions on Bastion Host
   provisioner "remote-exec" {
     inline = [ 
-        "sudo chmod 400 /tmp/private.pem"
+        "sudo chmod 400 /tmp/private1.pem"
      ]
   }
 
