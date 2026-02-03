@@ -12,17 +12,17 @@ resource "null_resource" "null_copy_ssh_key_to_bastion" {
     type = "ssh"
     host = azurerm_linux_virtual_machine.bastion_host_linuxvm.public_ip_address
     user = azurerm_linux_virtual_machine.bastion_host_linuxvm.admin_username
-    private_key = file("/tmp/terraform-azure.pem")
+    private_key = file("/tmp/private.pem")
   }
   # 1.3 File Provisioner: Copies the terraform-key.pem file from source agent/runner to destination vm/bastion at /tmp/terraform-key.pem
   provisioner "file" {
-    source = "/tmp/terraform-azure.pem"
-    destination = "/tmp/terraform-azure.pem"
+    source = "/tmp/private.pem"
+    destination = "/tmp/private.pem"
   }
   # 1.4 Remote Exec Provisioner: Using remote-exec provisioner fix the private key permissions on Bastion Host
   provisioner "remote-exec" {
     inline = [ 
-        "sudo chmod 400 /tmp/terraform-azure.pem"
+        "sudo chmod 400 /tmp/private.pem"
      ]
   }
 

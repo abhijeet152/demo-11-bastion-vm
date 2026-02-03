@@ -51,6 +51,14 @@ jobs:
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
+
+    # used to access bastion host & vm
+    - name: Write SSH Public Key
+      run: echo "${{ secrets.PUBLIC_KEY }}" > /tmp/public.pub
+
+    # will move private key to bastion host to access vm using terraform config.
+    - name: Write SSH Private Key
+      run: echo "${{ secrets.PRIVATE_KEY }}" > /tmp/private.pem
       
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
